@@ -26,13 +26,13 @@ sidepeak = side_lobes(array_factor_dB)
 bw = BW_3dB(theta,array_factor_dB)
 
 
-amp = chebwin(19,25)'                                                   
+amp = chebwin(8,22)'                                                   
 %amp =(5 [amp:end), amp(5:end)]                                                  
 
 figure(3)
-[theta,array_factor_dB] = array(N(2),amp,phase,spacing);                                
+[theta,array_factor_dB] = array(N(1),amp,phase,spacing);                                
 plot(rad2deg(theta),array_factor_dB); grid on;                                          
-xlim([0 180]); ylim([-60 0]); title('19-element Dolph-Chebyshev, {\lambda}/2 spacing'); 
+xlim([0 180]); ylim([-60 0]); title('8-element Dolph-Chebyshev, {\lambda}/2 spacing'); 
 xlabel('\Theta (degrees)'); ylabel('Array Factor (dB)');                                
 D_0_dB = directivity(theta,array_factor_dB)                                             
 bw_3dB = BW_3dB(theta,array_factor_dB)                                                  
